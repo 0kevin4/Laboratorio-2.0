@@ -7,11 +7,12 @@ namespace WebApplication1.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [Display(Name = "Nombre Empleado")]
+        [Display(Name = "Name")]
         public string Name { get; set; }
-        [Display(Name = "Cargo")]
+        [Display(Name = "Designation")]
         public string Designation { get; set; }
         [DataType(DataType.MultilineText)]
+        [Display(Name = "Adress")]
         public string Adress { get; set; }
         public DateTime? RecordCreation { get; set; }
         public DateTime? RecordUpdateOn { get; set; }

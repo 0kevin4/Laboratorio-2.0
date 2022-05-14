@@ -46,7 +46,7 @@ namespace WebApplication1.Controllers
                 {
                     _context.Employees.Add(employee);
                     _context.SaveChanges();
-                    TempData["ResultOk"] = "Record added Successfully!";
+                    TempData["ResultOk"] = "Empleado Adicionado con Exito!!";
                    
                 }
                 return RedirectToAction("Index");
@@ -86,7 +86,7 @@ namespace WebApplication1.Controllers
                 {
                     _context.Employees.Update(employee);
                     _context.SaveChanges();
-                    TempData["Resultok"] = "Data Updated Successfally!";
+                    TempData["Resultok"] = "Editado con Exito!!";
                 }
                 return RedirectToAction("Index");
             }
@@ -130,7 +130,7 @@ namespace WebApplication1.Controllers
                 employeefromdb.Estate = false;
                 _context.Employees.Update(employeefromdb);
                 _context.SaveChanges();
-                TempData["Resultok"] = "Data Deleted Successfully!";
+                TempData["Resultok"] = "Eliminado con Exito!!";
                 return RedirectToAction("Index");
             }
 
