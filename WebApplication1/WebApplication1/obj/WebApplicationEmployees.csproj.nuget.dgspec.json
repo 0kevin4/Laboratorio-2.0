@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj": {}
+    "C:\\Users\\user\\Desktop\\REPOSITORIO 2.0\\Laboratorio-2.0\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj": {
+    "C:\\Users\\user\\Desktop\\REPOSITORIO 2.0\\Laboratorio-2.0\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\REPOSITORIO 2.0\\Laboratorio-2.0\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj",
         "projectName": "WebApplicationEmployees",
-        "projectPath": "C:\\Users\\user\\Desktop\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\REPOSITORIO 2.0\\Laboratorio-2.0\\WebApplication1\\WebApplication1\\WebApplicationEmployees.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\REPOSITORIO 2.0\\Laboratorio-2.0\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,6 +67,14 @@
             "Microsoft.VisualStudio.Web.BrowserLink": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.0, )"
             }
           },
           "imports": [
@@ -91,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

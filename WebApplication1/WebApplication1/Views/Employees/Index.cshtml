@@ -2,12 +2,12 @@
 
     
 @{
-    ViewData["Title"]="Index";
+    ViewData["Title"]="Empleados";
 }   
     
 @if (TempData["ResultOk"] != null)
 {
-    <hl class="alert-success">@TempData["Resultok"]</hl>
+    <h2 class="alert-success" align="center">@TempData["Resultok"]</h2>
 }
 <div class="container box-shadow p-5">
     <h1 class="text-center mb-3">Operaciones CRUD usando.Net Core6yEntity Framework Core</h1>
@@ -27,7 +27,7 @@
                       <th scope="col">Nombre Empleado</th>
                       <th scope="col">Cargo</th>
                       <th scope="col">Dirección</th>
-                      <th scope="col">Fecha C.</th>
+                      <th scope="col">Fecha Creacion</th>
                       <th></th>
                  </tr>
        </thead>

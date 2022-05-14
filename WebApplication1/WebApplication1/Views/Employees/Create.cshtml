@@ -1,8 +1,13 @@
 ﻿@model Employee
 
+    
+@{
+    ViewData["Title"]="Adicionar Empleado";
+} 
+
  <div class="container box-shadow p-5">
     <div>
-        <h2>Agregar enpleado</h2>
+        <h2>Agregar empleado</h2>
     </div>
 
     <form method="post" asp-controller="Employees" asp-action="Create">
@@ -11,7 +16,7 @@
 
         <div class="forn-row">
             <div class="form-group col-md-6">
-                 <label asp-for="Name">Nombre del enpleado:</label>
+                 <label asp-for="Name">Nombre del empleado:</label>
                  <input type="text" class="form-control mb-3" asp-for="Name" placeholder="Ingrese el nombre del empleado" />
                  <span asp-validation-for="Name" class="alert-danger"></span>
              </div>
