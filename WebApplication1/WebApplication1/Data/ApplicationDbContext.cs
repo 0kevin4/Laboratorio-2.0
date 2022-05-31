@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
+using WebApplicationEmployees.Models;
 
 namespace WebApplication1.Data
 {
@@ -12,6 +13,7 @@ namespace WebApplication1.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<UsuarioRegistrado> UsuarioRegistrado { get; set; }
     }
 
 }
