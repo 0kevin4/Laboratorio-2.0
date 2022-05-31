@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using WebApplicationEmployees.Models;
+using WebApplicationEmployees.Models.ViewModels;
 
 namespace WebApplicationEmployees.Areas.Identity.Pages.Account
 {
@@ -176,5 +178,49 @@ namespace WebApplicationEmployees.Areas.Identity.Pages.Account
             }
             return (IUserEmailStore<IdentityUser>)_userStore;
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Registro(RegisterViewModel registroViewModel, string returnurl = null)  
+        {
+            ViewData["ReturnUrl"] = returnurl;
+            returnurl = returnurl ?? Url.Content("~/");
+            if (ModelState.IsValid)
+            {
+                var usuario = new UsuarioRegistrado
+                {
+                    UserName = registroViewModel.Email,
+                    Email = registroViewModel.Email,
+                    Nombres = registroViewModel.Nombres,
+                    Apellidos = registroViewModel.Apellidos,
+                    URL = registroViewModel.URL,
+                    CodigoPais = registroViewModel.CodigoPais,
+                    PhoneNumber = registroViewModel.Celular,
+                    Pais = registroViewModel.Pais,
+                    Ciudad = registroViewModel.Ciudad,
+                    Direccion = registroViewModel.Direccion,
+                    FechaNacimiento = registroViewModel.FechaNacimiento,
+                    Estado = true
+                };
+                var resultado = await _userManager.CreateAsync(usuario, registroViewModel.Password);
+                if (resultado.Succeeded)
+                {
+                    //Implementacion de confirmacion de email en el registro
+                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(usuario);
+                    var urlRetorno = Url.Action("ConfirmarEmail", "Cuentas", new { userId = usuario.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                    await _emailSender.SendEmailAsync(registroViewModel.Email, "Confirmar su cuenta - Proyecto Identity",
+                    "Por favor confirme su cuenta dando click aquí : <a href=\"" + urlRetorno + "\"> enlace </a>");
+                }
+
+                await _signInManager.SignInAsync(usuario, isPersistent: false);
+                // return RedirectToAction("Index","Home");
+                return LocalRedirect(returnurl);
+                
+            }
+
+            return View(registroViewModel);
+        }
     }
 }
+
